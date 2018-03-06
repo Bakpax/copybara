@@ -37,7 +37,7 @@ def main(args):
     unused_opts, paths, unused_getusage = _main._parseopts(args)
     td = tempfile.mkdtemp(dir=os.environ['TEST_TMPDIR'])
     for p in paths:
-        dest = os.path.join(td, os.path.basename(p))
+        dest = os.path.join(str(td), str(os.path.basename(p)))
         shutil.copyfile(p, dest)
         for i, x in enumerate(args):
             if x == p:
